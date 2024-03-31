@@ -1,0 +1,91 @@
+2024-03-26 18:15:10,071 INFO    StreamThr :417287 [internal.py:wandb_internal():86] W&B internal server running at pid: 417287, started at: 2024-03-26 18:15:10.071477
+2024-03-26 18:15:10,072 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: status
+2024-03-26 18:15:10,075 INFO    WriterThread:417287 [datastore.py:open_for_write():87] open: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/run-ru7dcfm4.wandb
+2024-03-26 18:15:10,076 DEBUG   SenderThread:417287 [sender.py:send():378] send: header
+2024-03-26 18:15:10,076 DEBUG   SenderThread:417287 [sender.py:send():378] send: run
+2024-03-26 18:15:10,503 INFO    SenderThread:417287 [dir_watcher.py:__init__():211] watching files in: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files
+2024-03-26 18:15:10,503 INFO    SenderThread:417287 [sender.py:_start_run_threads():1099] run started: ru7dcfm4 with start time 1711444510.071449
+2024-03-26 18:15:10,508 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: check_version
+2024-03-26 18:15:10,508 DEBUG   SenderThread:417287 [sender.py:send_request():405] send_request: check_version
+2024-03-26 18:15:10,730 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: run_start
+2024-03-26 18:15:10,743 DEBUG   HandlerThread:417287 [system_info.py:__init__():26] System info init
+2024-03-26 18:15:10,743 DEBUG   HandlerThread:417287 [system_info.py:__init__():41] System info init done
+2024-03-26 18:15:10,743 INFO    HandlerThread:417287 [system_monitor.py:start():194] Starting system monitor
+2024-03-26 18:15:10,743 INFO    SystemMonitor:417287 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-03-26 18:15:10,744 INFO    SystemMonitor:417287 [interfaces.py:start():190] Started cpu monitoring
+2024-03-26 18:15:10,744 INFO    HandlerThread:417287 [system_monitor.py:probe():214] Collecting system info
+2024-03-26 18:15:10,744 INFO    SystemMonitor:417287 [interfaces.py:start():190] Started disk monitoring
+2024-03-26 18:15:10,745 INFO    SystemMonitor:417287 [interfaces.py:start():190] Started gpu monitoring
+2024-03-26 18:15:10,745 INFO    SystemMonitor:417287 [interfaces.py:start():190] Started memory monitoring
+2024-03-26 18:15:10,746 INFO    SystemMonitor:417287 [interfaces.py:start():190] Started network monitoring
+2024-03-26 18:15:10,754 DEBUG   HandlerThread:417287 [system_info.py:probe():150] Probing system
+2024-03-26 18:15:10,757 DEBUG   HandlerThread:417287 [gitlib.py:_init_repo():56] git repository is invalid
+2024-03-26 18:15:10,757 DEBUG   HandlerThread:417287 [system_info.py:probe():198] Probing system done
+2024-03-26 18:15:10,757 DEBUG   HandlerThread:417287 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-101-generic-x86_64-with-glibc2.17', 'python': '3.8.18', 'heartbeatAt': '2024-03-26T09:15:10.754408', 'startedAt': '2024-03-26T09:15:10.067953', 'docker': None, 'cuda': None, 'args': ('--model', 'convnext', '--version', 'original', '--cuda', '0', '--ts_batch_size', '48', '--vs_batch_size', '8', '--epochs', '200', '--loss', 'ce', '--optimizer', 'AdamW', '--learning_rate', '0.0001', '--scheduler', 'lambda', '--save_path', '/home/eiden/eiden/octc-classification/models/multi', '--pretrain', 'no', '--pretrained_model', 'practice', '--error_signal', 'no', '--wandb', 'yes'), 'state': 'running', 'program': './run.py', 'codePathLocal': 'run.py', 'codePath': 'run.py', 'host': 'eiden', 'username': 'eiden', 'executable': '/home/eiden/anaconda3/envs/eiden/bin/python', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 3623.10025, 'min': 800.0, 'max': 5150.0}, 'cpu_freq_per_core': [{'current': 3500.0, 'min': 800.0, 'max': 5100.0}, {'current': 3500.0, 'min': 800.0, 'max': 5100.0}, {'current': 3500.0, 'min': 800.0, 'max': 5100.0}, {'current': 3500.0, 'min': 800.0, 'max': 5100.0}, {'current': 3500.0, 'min': 800.0, 'max': 5300.0}, {'current': 3500.0, 'min': 800.0, 'max': 5300.0}, {'current': 3500.0, 'min': 800.0, 'max': 5100.0}, {'current': 3928.136, 'min': 800.0, 'max': 5100.0}, {'current': 3500.0, 'min': 800.0, 'max': 5100.0}, {'current': 3500.0, 'min': 800.0, 'max': 5100.0}, {'current': 3500.0, 'min': 800.0, 'max': 5100.0}, {'current': 3500.0, 'min': 800.0, 'max': 5100.0}, {'current': 3500.0, 'min': 800.0, 'max': 5300.0}, {'current': 3500.0, 'min': 800.0, 'max': 5300.0}, {'current': 3500.0, 'min': 800.0, 'max': 5100.0}, {'current': 3500.0, 'min': 800.0, 'max': 5100.0}], 'disk': {'/': {'total': 915.3232879638672, 'used': 607.0178146362305}}, 'gpu': 'NVIDIA GeForce RTX 4090', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}], 'memory': {'total': 31.169647216796875}}
+2024-03-26 18:15:10,757 INFO    HandlerThread:417287 [system_monitor.py:probe():224] Finished collecting system info
+2024-03-26 18:15:10,757 INFO    HandlerThread:417287 [system_monitor.py:probe():227] Publishing system info
+2024-03-26 18:15:10,757 DEBUG   HandlerThread:417287 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-03-26 18:15:11,504 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_created():271] file/dir created: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/conda-environment.yaml
+2024-03-26 18:15:12,592 DEBUG   HandlerThread:417287 [system_info.py:_save_conda():219] Saving conda packages done
+2024-03-26 18:15:12,592 INFO    HandlerThread:417287 [system_monitor.py:probe():229] Finished publishing system info
+2024-03-26 18:15:12,594 DEBUG   SenderThread:417287 [sender.py:send():378] send: files
+2024-03-26 18:15:12,594 INFO    SenderThread:417287 [sender.py:_save_file():1365] saving file wandb-metadata.json with policy now
+2024-03-26 18:15:12,650 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: python_packages
+2024-03-26 18:15:12,650 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-26 18:15:12,651 DEBUG   SenderThread:417287 [sender.py:send_request():405] send_request: python_packages
+2024-03-26 18:15:12,651 DEBUG   SenderThread:417287 [sender.py:send_request():405] send_request: stop_status
+2024-03-26 18:15:12,652 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-26 18:15:12,877 DEBUG   SenderThread:417287 [sender.py:send():378] send: telemetry
+2024-03-26 18:15:12,878 DEBUG   SenderThread:417287 [sender.py:send():378] send: telemetry
+2024-03-26 18:15:12,878 DEBUG   SenderThread:417287 [sender.py:send():378] send: run
+2024-03-26 18:15:13,053 INFO    SenderThread:417287 [sender.py:send_run():973] updated run: ru7dcfm4
+2024-03-26 18:15:13,286 INFO    wandb-upload_0:417287 [upload_job.py:push():131] Uploaded file /tmp/tmpko289vu8wandb/lnh3dwa7-wandb-metadata.json
+2024-03-26 18:15:13,504 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/config.yaml
+2024-03-26 18:15:13,504 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/conda-environment.yaml
+2024-03-26 18:15:13,504 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_created():271] file/dir created: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/wandb-metadata.json
+2024-03-26 18:15:13,504 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_created():271] file/dir created: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:13,504 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_created():271] file/dir created: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/requirements.txt
+2024-03-26 18:15:15,504 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:15,619 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: status_report
+2024-03-26 18:15:17,504 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:19,505 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:21,304 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: status_report
+2024-03-26 18:15:21,505 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:23,506 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:25,506 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:26,576 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: status_report
+2024-03-26 18:15:27,507 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:27,651 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-26 18:15:27,651 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-26 18:15:27,651 DEBUG   SenderThread:417287 [sender.py:send_request():405] send_request: stop_status
+2024-03-26 18:15:29,507 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:31,507 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:31,968 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: status_report
+2024-03-26 18:15:33,508 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:35,508 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:37,248 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: status_report
+2024-03-26 18:15:37,509 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:39,509 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:41,510 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:42,591 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: status_report
+2024-03-26 18:15:42,651 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: stop_status
+2024-03-26 18:15:42,651 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: internal_messages
+2024-03-26 18:15:42,885 DEBUG   SenderThread:417287 [sender.py:send_request():405] send_request: stop_status
+2024-03-26 18:15:43,510 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/config.yaml
+2024-03-26 18:15:43,510 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:45,510 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:47,511 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:47,901 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: status_report
+2024-03-26 18:15:49,511 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:51,512 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:53,193 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: status_report
+2024-03-26 18:15:53,512 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:55,513 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:57,513 INFO    Thread-12 :417287 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/files/output.log
+2024-03-26 18:15:58,347 DEBUG   HandlerThread:417287 [handler.py:handle_request():146] handle_request: status_report
+2024-03-26 18:15:58,737 INFO    MainThread:417287 [internal.py:handle_exit():76] Internal process exited
+2024-03-26 18:15:58,755 INFO    memory    :417287 [interfaces.py:monitor():140] Process proc.memory.rssMB has exited.
+2024-03-26 18:15:58,755 DEBUG   SystemMonitor:417287 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-03-26 18:15:58,755 DEBUG   SystemMonitor:417287 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-03-26 18:15:58,755 DEBUG   SystemMonitor:417287 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-03-26 18:15:58,756 DEBUG   SenderThread:417287 [sender.py:send():378] send: stats

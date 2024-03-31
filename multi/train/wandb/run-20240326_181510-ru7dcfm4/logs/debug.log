@@ -1,0 +1,27 @@
+2024-03-26 18:15:10,068 INFO    MainThread:417178 [wandb_setup.py:_flush():76] Current SDK version is 0.16.4
+2024-03-26 18:15:10,068 INFO    MainThread:417178 [wandb_setup.py:_flush():76] Configure stats pid to 417178
+2024-03-26 18:15:10,068 INFO    MainThread:417178 [wandb_setup.py:_flush():76] Loading settings from /home/eiden/.config/wandb/settings
+2024-03-26 18:15:10,068 INFO    MainThread:417178 [wandb_setup.py:_flush():76] Loading settings from /home/eiden/eiden/octc-classification/source/multi/wandb/settings
+2024-03-26 18:15:10,068 INFO    MainThread:417178 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-03-26 18:15:10,068 INFO    MainThread:417178 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-03-26 18:15:10,068 INFO    MainThread:417178 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'run.py', 'program_abspath': '/home/eiden/eiden/octc-classification/source/multi/run.py', 'program': './run.py'}
+2024-03-26 18:15:10,068 INFO    MainThread:417178 [wandb_init.py:_log_setup():526] Logging user logs to /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/logs/debug.log
+2024-03-26 18:15:10,069 INFO    MainThread:417178 [wandb_init.py:_log_setup():527] Logging internal logs to /home/eiden/eiden/octc-classification/source/multi/wandb/run-20240326_181510-ru7dcfm4/logs/debug-internal.log
+2024-03-26 18:15:10,069 INFO    MainThread:417178 [wandb_init.py:init():566] calling init triggers
+2024-03-26 18:15:10,069 INFO    MainThread:417178 [wandb_init.py:init():573] wandb.init called with sweep_config: {}
+config: {'save_path': '/home/eiden/eiden/octc-classification/models/multi', 'version': 'original', 'cuda': '0', 'num_workers': 4, 'wandb': 'yes', 'pretrain': 'no', 'pretrained_model': 'practice', 'error_signal': 'no', 'ts_batch_size': 48, 'vs_batch_size': 8, 'learning_rate': 0.0001, 'epochs': 200, 'optimizer': 'AdamW', 'scheduler': 'lambda', 'loss': 'ce', 'valid_epoch': 1, 'model': 'convnext', 'training_date': '240326'}
+2024-03-26 18:15:10,069 INFO    MainThread:417178 [wandb_init.py:init():616] starting backend
+2024-03-26 18:15:10,069 INFO    MainThread:417178 [wandb_init.py:init():620] setting up manager
+2024-03-26 18:15:10,070 INFO    MainThread:417178 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-03-26 18:15:10,071 INFO    MainThread:417178 [wandb_init.py:init():628] backend started and connected
+2024-03-26 18:15:10,075 INFO    MainThread:417178 [wandb_init.py:init():720] updated telemetry
+2024-03-26 18:15:10,075 INFO    MainThread:417178 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2024-03-26 18:15:10,507 INFO    MainThread:417178 [wandb_run.py:_on_init():2262] communicating current version
+2024-03-26 18:15:10,728 INFO    MainThread:417178 [wandb_run.py:_on_init():2271] got version response upgrade_message: "wandb version 0.16.5 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2024-03-26 18:15:10,728 INFO    MainThread:417178 [wandb_init.py:init():804] starting run threads in backend
+2024-03-26 18:15:12,651 INFO    MainThread:417178 [wandb_run.py:_console_start():2241] atexit reg
+2024-03-26 18:15:12,651 INFO    MainThread:417178 [wandb_run.py:_redirect():2096] redirect: wrap_raw
+2024-03-26 18:15:12,651 INFO    MainThread:417178 [wandb_run.py:_redirect():2161] Wrapping output streams.
+2024-03-26 18:15:12,651 INFO    MainThread:417178 [wandb_run.py:_redirect():2186] Redirects installed.
+2024-03-26 18:15:12,651 INFO    MainThread:417178 [wandb_init.py:init():847] run started, returning control to user process

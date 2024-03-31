@@ -1,0 +1,76 @@
+/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=Swin_V2_B_Weights.IMAGENET1K_V1`. You can also use `weights=Swin_V2_B_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Downloading: "https://download.pytorch.org/models/swin_v2_b-781e5279.pth" to /home/eiden/.cache/torch/hub/checkpoints/swin_v2_b-781e5279.pth
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████▉| 335M/336M [01:18<00:00, 3.79MB/s]
+Training Model : convnext | status : [42mNEW
+[41mFinished Initalization
+100%|██████████| 336M/336M [01:18<00:00, 4.51MB/s]
+/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+0it [00:01, ?it/s]/200 [00:00<?, ?it/s]
+  0%|          | 0/200 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "./run.py", line 12, in <module>
+    main()
+  File "./run.py", line 9, in main
+    trainer.fit()
+  File "/home/eiden/eiden/octc-classification/source/multi/train/train.py", line 209, in fit
+    outputs = self.model(inputs)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eiden/eiden/octc-classification/source/multi/train/../../network/multi_models.py", line 471, in forward
+    return F.softmax(self.base_model(x), dim = 1)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torchvision/models/swin_transformer.py", line 613, in forward
+    x = self.head(x)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (48x1024 and 768x3)
