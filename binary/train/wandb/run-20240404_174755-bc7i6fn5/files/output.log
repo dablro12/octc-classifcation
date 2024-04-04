@@ -1,0 +1,45 @@
+/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ConvNeXt_Base_Weights.IMAGENET1K_V1`. You can also use `weights=ConvNeXt_Base_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+  0%|          | 0/100 [00:00<?, ?it/s]
+0it [00:00, ?it/s]
+Training Model : convnext | status : [42mNEW
+[41mFinished Initalization
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/100 [00:37<?, ?it/s]
+Traceback (most recent call last):
+  File "run.py", line 12, in <module>
+    main()
+  File "run.py", line 9, in main
+    trainer.fit()
+  File "/home/eiden/eiden/octc-classification/source/binary/train/train.py", line 220, in fit
+    self.metrics['train_recall'].append(recall_score(train_target, train_pred))
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/sklearn/utils/_param_validation.py", line 214, in wrapper
+    return func(*args, **kwargs)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 2304, in recall_score
+    _, r, _, _ = precision_recall_fscore_support(
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/sklearn/utils/_param_validation.py", line 187, in wrapper
+    return func(*args, **kwargs)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 1724, in precision_recall_fscore_support
+    labels = _check_set_wise_labels(y_true, y_pred, average, labels, pos_label)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 1518, in _check_set_wise_labels
+    raise ValueError(
+ValueError: Target is multiclass but average='binary'. Please choose another average setting, one of [None, 'micro', 'macro', 'weighted'].

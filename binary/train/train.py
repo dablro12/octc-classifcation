@@ -12,15 +12,14 @@ from torchvision import transforms
 #dataset
 from utils.dataset import CustomDataset
 from torch.utils.data import DataLoader
-#model 
-import torchvision.models as models
-from utils.models import *
-import utils.loss as loss 
 
 #metric
 from sklearn.metrics import recall_score, f1_score, accuracy_score
 
 from torchsampler import ImbalancedDatasetSampler
+import sys 
+sys.path.append('../../')
+from network import binary_models
 
 
 #numeric
@@ -56,28 +55,21 @@ class Train(nn.Module):
         ########################## Data set & Data Loader ##############################
         # Data set & Data Loader
         train_transform = transforms.Compose([
-            transforms.Resize((224, 224), antialias= True), # 혹은 모델에 맞는 다른 사이즈로 조정
+            transforms.Resize((224,224), antialias=True),
+            transforms.Grayscale(num_output_channels=3),
             transforms.ToTensor(),
-            transforms.RandomApply([
-                transforms.RandomRotation(degrees=15),
-                transforms.RandomHorizontalFlip(p=0.5),
-                transforms.RandomVerticalFlip(p=0.5),
-                transforms.RandomResizedCrop(size=224, scale=(0.8, 1.0), ratio=(0.75, 1.33), antialias= True),
-                transforms.RandomAffine(degrees=0, translate=(0.1, 0.1)),
-                transforms.ColorJitter(brightness=0.2, contrast=0.2)
-            ], p=0.7),
         ])
-
-
 
         valid_transform = transforms.Compose([
             transforms.Resize((224,224), antialias=True),
             transforms.Grayscale(num_output_channels=3),
             transforms.ToTensor(),
         ])
-
-        train_dataset = CustomDataset(root_dir = '../data/data_bin_sono/train', transform= train_transform)
-        valid_dataset = CustomDataset(root_dir = '../data/data_bin_sono/valid', transform= valid_transform)
+        # train_dataset = CustomDataset(root_dir = '/home/eiden/eiden/DB/octc/data_bin_origin/train', transform= train_transform) #origin
+        # train_dataset = CustomDataset(root_dir = '/home/eiden/eiden/DB/octc/data_bin_sono/train', transform= train_transform) # sono 
+        train_dataset = CustomDataset(root_dir = '/home/eiden/eiden/DB/oci-gan/oci-gan_v1/train', transform= train_transform) #ours
+        # Fix 
+        valid_dataset = CustomDataset(root_dir = '/home/eiden/eiden/DB/octc/data_bin_origin/valid', transform= valid_transform)
 
         self.train_loader = DataLoader(
                                     dataset = train_dataset,
@@ -101,7 +93,7 @@ class Train(nn.Module):
         self.w = args.wandb
         if args.wandb == 'yes':
             wandb.init(
-                project = 'PCOS', 
+                project = 'octc-bin-classification', 
                 entity = 'dablro1232',
                 notes = 'baseline',
                 config = args.__dict__,
@@ -109,7 +101,7 @@ class Train(nn.Module):
             name = args.model + f'_{args.version}' + f'_{args.training_date}'
             wandb.run.name = name #name으로 지정 
         else:
-            name = wandb.run.name #없으면 랜덤으로 지정
+            name = args.model + f'_{args.version}' + f'_{args.training_date}'
         ######################################### Wan DB #########################################
         
         ######################################### Saving File #########################################
@@ -120,6 +112,8 @@ class Train(nn.Module):
         self.arg_path = f"{self.save_path}/{name}.json" #인자 save할 경로 설정
         save_args(self.arg_path)
         ######################################### Saving File #########################################
+        self.model = binary_models.pretrained_convnext_binary()
+        # self.model = binary_models.pretrained_swin_binary()
         
         ############################## Model Initialization & GPU Setting ##############################
         if args.pretrain == 'yes': #pretrained model 사용여부
@@ -129,7 +123,6 @@ class Train(nn.Module):
             
             checkpoint = torch.load(PATH)
             
-            self.model = pretrained_unet_encoder_binary()
             self.model.to(self.device)
             self.model.load_state_dict(checkpoint['model_state_dict'])
             
@@ -155,7 +148,6 @@ class Train(nn.Module):
             self.best_loss = 1000000
             
         else:
-            self.model = pretrained_unet_encoder_binary()
             self.model.to(self.device)
 
             print(f"Training Model : {args.model} | status : \033[42mNEW\033[0m")
@@ -215,17 +207,18 @@ class Train(nn.Module):
                 train_loss = self.loss(outputs, labels)
                 train_loss.backward()
                 self.optimizer.step()
-                train_losses += train_loss.item()
                 
+                train_losses += train_loss.item()
                 # 예측 값을 이진 레이블로 변환
-                pred = (F.sigmoid(outputs) > 0.5).float()
+                pred = (torch.sigmoid(outputs) > 0.5).float()
                 train_target.extend(labels.detach().cpu().numpy())
                 train_pred.extend(pred.detach().cpu().numpy())
 
             self.metrics['train_loss'].append(train_losses/len(self.train_loader))
             self.metrics['train_accuracy'].append(accuracy_score(train_target, train_pred))
-            self.metrics['train_f1'].append(f1_score(train_target, train_pred))
-            self.metrics['train_recall'].append(recall_score(train_target, train_pred))
+            self.metrics['train_f1'].append(f1_score(train_target, train_pred, average = 'weighted'))
+            self.metrics['train_recall'].append(recall_score(train_target, train_pred, average=None))
+
             
             self.scheduler.step()
             lr = self.optimizer.param_groups[0]["lr"]
@@ -243,23 +236,22 @@ class Train(nn.Module):
             ################################# valid #################################
             with torch.no_grad():
                 self.model.eval()
-                if epoch % 1 == 0: 
-                    for _ , (inputs, labels) in enumerate(self.valid_loader):
-                        inputs, labels = inputs.to(self.device), labels.float().to(self.device)
-                        outputs = self.model(inputs)
-                        
-                        valid_loss = self.loss(outputs, labels)
-                        valid_losses += valid_loss.item()
+                for _ , (inputs, labels) in enumerate(self.valid_loader):
+                    inputs, labels = inputs.to(self.device), labels.float().to(self.device)
+                    outputs = self.model(inputs)
+                    
+                    valid_loss = self.loss(outputs, labels)
+                    valid_losses += valid_loss.item()
 
-                        # 예측 값을 이진 레이블로 변환
-                        pred = (F.sigmoid(outputs) > 0.5).float()
-                        valid_target.extend(labels.detach().cpu().numpy())
-                        valid_pred.extend(pred.detach().cpu().numpy())
-                        
-                    self.metrics['valid_loss'].append(valid_losses/len(self.valid_loader))
-                    self.metrics['valid_accuracy'].append(accuracy_score(valid_target, valid_pred))
-                    self.metrics['valid_f1'].append(f1_score(valid_target, valid_pred))
-                    self.metrics['valid_recall'].append(recall_score(valid_target, valid_pred))
+                    # 예측 값을 이진 레이블로 변환
+                    pred = (torch.sigmoid(outputs) > 0.5).float()
+                    valid_target.extend(labels.detach().cpu().numpy())
+                    valid_pred.extend(pred.detach().cpu().numpy())
+                    
+                self.metrics['valid_loss'].append(valid_losses/len(self.valid_loader))
+                self.metrics['valid_accuracy'].append(accuracy_score(valid_target, valid_pred))
+                self.metrics['valid_f1'].append(f1_score(valid_target, valid_pred, average = 'weighted'))
+                self.metrics['valid_recall'].append(recall_score(valid_target, valid_pred, average=None))
                     
                     
             print("#"*100)    
@@ -323,8 +315,7 @@ class Train(nn.Module):
                 print(f"SAVE MODEL PATH : {self.model_save_path}")
                 # break
             
-            # elif epoch % 10 == 0 or epoch +1 == self.epochs:
-            elif epoch == 0 or epoch +1 == self.epochs:
+            elif epoch % 10 == 0 or epoch +1 == self.epochs:
                 torch.save({
                     "model" : f"{self.model_name}" + f"{self.version}_{epoch}",
                     "epoch" : epoch,

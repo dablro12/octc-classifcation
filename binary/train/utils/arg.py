@@ -6,7 +6,7 @@ datetime.today()
 parser = argparse.ArgumentParser(description='DL Hyper-Parameter Setting')
 ############################################################################
 # Data Setting
-parser.add_argument("--save_path", "-path", default='./model')
+parser.add_argument("--save_path", "-path", default='../../model')
 parser.add_argument("--version", "-v", default='v1')
 parser.add_argument("--cuda", "-gpu", type=str, default='0')
 parser.add_argument("--num_workers", type=int, default=4)

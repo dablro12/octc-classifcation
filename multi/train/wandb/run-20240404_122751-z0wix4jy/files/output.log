@@ -1,0 +1,71 @@
+/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ConvNeXt_Large_Weights.IMAGENET1K_V1`. You can also use `weights=ConvNeXt_Large_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+  0%|          | 0/200 [00:00<?, ?it/s]
+0it [00:00, ?it/s]
+Training Model : convnext | status : [42mNEW
+[41mFinished Initalization
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+50it [00:38,  1.50it/s]
+####################################################################################################
+LOSS : 0.9660486519336701 | 0.8139962036358682
+ ACC : 0.5772631578947368 | 0.7777777777777778
+ F1 : 0.5779846853321227 | 0.7769353061861246
+ RECALL : 0.5772631578947368 | 0.7777777777777778
+  0%|          | 1/200 [00:41<2:18:56, 41.89s/it]
+0it [00:00, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+50it [00:38,  1.51it/s]
+####################################################################################################
+LOSS : 0.735966204404831 | 0.7785819361084386
+ ACC : 0.8298947368421052 | 0.7845117845117845
+ F1 : 0.8300578388664162 | 0.7945985490361287
+ RECALL : 0.8298947368421052 | 0.7845117845117845
+####################################################################################################
+  1%|          | 2/200 [01:23<2:17:41, 41.72s/it]
+
+
+
+
+
+
+
+

@@ -58,8 +58,8 @@ class Train(nn.Module):
         ########################## Data set & Data Loader ##############################
         # Data set & Data Loader
         train_transform = transforms.Compose([
-            transforms.Grayscale(num_output_channels=3),
             transforms.Resize((224,224), antialias=True),
+            transforms.Grayscale(num_output_channels=3),
             # transforms.RandomCrop(size = (224,224)),
             # transforms.RandomRotation((0, 45), interpolation=transforms.InterpolationMode.NEAREST),
             # transforms.RandomHorizontalFlip(),
@@ -71,10 +71,9 @@ class Train(nn.Module):
             transforms.ToTensor(),
         ])
 
-        train_dataset = CustomDataset(root_dir = '/home/eiden/eiden/DB/octc/data_multi_sono/train', transform= train_transform)
-        
+        train_dataset = CustomDataset(root_dir = '/home/eiden/eiden/DB/oci-gan/oci-gan_v1/train', transform= train_transform)
         # Fix 
-        valid_dataset = CustomDataset(root_dir = '/home/eiden/eiden/DB/octc/data_multi_origin/valid', transform= valid_transform)
+        valid_dataset = CustomDataset(root_dir = '/home/eiden/eiden/DB/oci-gan/oci-gan_v1/valid', transform= valid_transform)
 
         self.train_loader = DataLoader(
                                     dataset = train_dataset,
@@ -117,7 +116,7 @@ class Train(nn.Module):
         self.arg_path = f"{self.save_path}/{name}.json" #인자 save할 경로 설정
         save_args(self.arg_path)
         ######################################### Saving File #########################################
-        self.model = multi_models.pretrained_convnext_multi()
+        self.model = multi_models.pretrained_swin_multi()
         ############################## Model Initialization & GPU Setting ##############################
         if args.pretrain == 'yes': #pretrained model 사용여부
             wandb_name = args.pretrained_model

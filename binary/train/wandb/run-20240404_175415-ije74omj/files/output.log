@@ -1,0 +1,41 @@
+/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ConvNeXt_Base_Weights.IMAGENET1K_V1`. You can also use `weights=ConvNeXt_Base_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+  0%|          | 0/100 [00:00<?, ?it/s]
+0it [00:00, ?it/s]
+Training Model : convnext | status : [42mNEW
+[41mFinished Initalization
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/100 [00:38<?, ?it/s]
+Traceback (most recent call last):
+  File "run.py", line 12, in <module>
+    main()
+  File "run.py", line 9, in main
+    trainer.fit()
+  File "/home/eiden/eiden/octc-classification/source/binary/train/train.py", line 253, in fit
+    self.metrics['valid_f1'].append(f1_score(valid_target, average = 'weighted'))
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/sklearn/utils/_param_validation.py", line 192, in wrapper
+    params = func_sig.bind(*args, **kwargs)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/inspect.py", line 3037, in bind
+    return self._bind(args, kwargs)
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/inspect.py", line 2952, in _bind
+    raise TypeError(msg) from None
+TypeError: missing a required argument: 'y_pred'

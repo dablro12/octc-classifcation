@@ -1,0 +1,35 @@
+/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ConvNeXt_Large_Weights.IMAGENET1K_V1`. You can also use `weights=ConvNeXt_Large_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+  0%|          | 0/200 [00:00<?, ?it/s]
+0it [00:00, ?it/s]
+Training Model : convnext | status : [42mNEW
+[41mFinished Initalization
+
+
+
+
+  0%|          | 0/200 [00:09<?, ?it/s]
+Traceback (most recent call last):
+  File "./run.py", line 12, in <module>
+    main()
+  File "./run.py", line 9, in main
+    trainer.fit()
+  File "/home/eiden/eiden/octc-classification/source/multi/train/train.py", line 206, in fit
+    for _, (inputs, labels) in tqdm(enumerate(self.train_loader)):
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/tqdm/std.py", line 1181, in __iter__
+    for obj in iterable:
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 675, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/eiden/eiden/octc-classification/source/multi/train/utils/dataset.py", line 33, in __getitem__
+    image = Image.open(image_path).convert('RGB')
+  File "/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/PIL/Image.py", line 3247, in open
+    fp = builtins.open(filename, "rb")
+IsADirectoryError: [Errno 21] Is a directory: '/home/eiden/eiden/DB/oci-gan/oci-gan_v1/train/0/.ipynb_checkpoints'

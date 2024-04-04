@@ -1,0 +1,1 @@
+{"Learning_Rate": 2.3649566588229936e-06, "train_LOSS": 0.0005499614305639019, "train_ACC": 1.0, "train_F1Score": 1.0, "train_RECALL": 1.0, "_timestamp": 1712220154.8190246, "valid_LOSS": 0.7585170097666522, "valid_ACC": 0.8619528619528619, "valid_F1Score": 0.7354838709677419, "valid_RECALL": 0.6263736263736264, "_runtime": 3097.233206510544, "_step": 72}

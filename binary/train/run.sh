@@ -1,13 +1,14 @@
-python run.py --model "unet" \
-                --version "sonography" \
+python run.py --model "convnext" \
+                --version "ours" \
                 --cuda "0"\
-                --ts_batch_size 32\
+                --ts_batch_size 80\
                 --vs_batch_size 8\
-                --epochs 500\
+                --epochs 100\
                 --loss "bce"\
                 --optimizer "Adam"\
                 --learning_rate 0.0001\
                 --scheduler "lambda"\
-                --pretrain "yes" --pretrained_model "unet_sonography_240124" --error_signal "yes"\
+                --save_path "/home/eiden/eiden/octc-classification/models/binary"\
+                --pretrain "no" --pretrained_model "practice" --error_signal "yes"\
                 --wandb "yes"\
-                # --training_date "230124"
+                > output.log 2>&1 &

@@ -1,0 +1,131 @@
+/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ConvNeXt_Base_Weights.IMAGENET1K_V1`. You can also use `weights=ConvNeXt_Base_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/eiden/anaconda3/envs/eiden/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+  0%|          | 0/100 [00:00<?, ?it/s]
+0it [00:00, ?it/s]
+Training Model : convnext | status : [42mNEW
+[41mFinished Initalization
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+30it [00:43,  1.28s/it]
+####################################################################################################
+LOSS : 0.6774448851744334 | 0.6147643249285849
+ ACC : 0.5583649388959123 | 0.6734006734006734
+ F1 : 0.5725938009787929 | 0.5764192139737991
+ RECALL : 0.5914069081718618 | 0.7252747252747253
+  1%|          | 1/100 [00:47<1:18:40, 47.68s/it]
+1it [00:01,  1.48s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+30it [00:43,  1.31s/it]
+####################################################################################################
+LOSS : 0.5761945714553197 | 0.6288286145580443
+ ACC : 0.7050147492625368 | 0.6632996632996633
+ F1 : 0.6905393457117595 | 0.6212121212121212
+ RECALL : 0.6624257845631891 | 0.9010989010989011
+  2%|▏         | 2/100 [01:33<1:16:30, 46.84s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+30it [00:44,  1.32s/it]
+####################################################################################################
+LOSS : 0.41196926633516945 | 0.3941711579498492
+ ACC : 0.8171091445427728 | 0.8215488215488216
+ F1 : 0.8065953654188948 | 0.6826347305389222
+ RECALL : 0.7924693520140105 | 0.6263736263736264
+  3%|▎         | 3/100 [02:21<1:16:32, 47.34s/it]
+1it [00:01,  1.39s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  4%|▍         | 4/100 [03:08<1:15:04, 46.92s/it]
+0it [00:00, ?it/s]
+####################################################################################################
+LOSS : 0.24875525732835133 | 0.40580337587744
+ ACC : 0.8997050147492626 | 0.8619528619528619
+ F1 : 0.8993231810490693 | 0.7734806629834255
+ RECALL : 0.8850957535387177 | 0.7692307692307693
+
+
+
+
+
+

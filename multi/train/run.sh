@@ -1,5 +1,5 @@
-python ./run.py --model "convnext" \
-                --version "sono_ntr" \
+python ./run.py --model "swin" \
+                --version "ours" \
                 --cuda "0"\
                 --ts_batch_size 48\
                 --vs_batch_size 8\
