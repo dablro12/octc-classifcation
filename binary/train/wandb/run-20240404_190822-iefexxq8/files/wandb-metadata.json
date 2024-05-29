@@ -1,0 +1,159 @@
+{
+    "os": "Linux-5.15.0-101-generic-x86_64-with-glibc2.17",
+    "python": "3.8.18",
+    "heartbeatAt": "2024-04-04T10:08:24.285413",
+    "startedAt": "2024-04-04T10:08:22.779651",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--model",
+        "swin",
+        "--version",
+        "sono",
+        "--cuda",
+        "0",
+        "--ts_batch_size",
+        "80",
+        "--vs_batch_size",
+        "8",
+        "--epochs",
+        "100",
+        "--loss",
+        "bce",
+        "--optimizer",
+        "Adam",
+        "--learning_rate",
+        "0.0001",
+        "--scheduler",
+        "lambda",
+        "--save_path",
+        "/home/eiden/eiden/octc-classification/models/binary",
+        "--pretrain",
+        "no",
+        "--pretrained_model",
+        "practice",
+        "--error_signal",
+        "yes",
+        "--wandb",
+        "yes"
+    ],
+    "state": "running",
+    "program": "run.py",
+    "codePathLocal": "run.py",
+    "codePath": "binary/train/run.py",
+    "git": {
+        "remote": "https://github.com/dablro12/octc-classifcation.git",
+        "commit": "bc1153036ef829ef49275880f29bef431591ee75"
+    },
+    "email": "dablro1232@gmail.com",
+    "root": "/home/eiden/eiden/octc-classification/source",
+    "host": "eiden",
+    "username": "eiden",
+    "executable": "/home/eiden/anaconda3/envs/eiden/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 3536.5705,
+        "min": 800.0,
+        "max": 5150.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 4085.128,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5100.0
+        },
+        {
+            "current": 3500.0,
+            "min": 800.0,
+            "max": 5100.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 915.3232879638672,
+            "used": 757.9185981750488
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": 25757220864
+        }
+    ],
+    "memory": {
+        "total": 31.169647216796875
+    }
+}

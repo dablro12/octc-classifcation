@@ -65,11 +65,13 @@ class Train(nn.Module):
             transforms.Grayscale(num_output_channels=3),
             transforms.ToTensor(),
         ])
-        # train_dataset = CustomDataset(root_dir = '/home/eiden/eiden/DB/octc/data_bin_origin/train', transform= train_transform) #origin
-        # train_dataset = CustomDataset(root_dir = '/home/eiden/eiden/DB/octc/data_bin_sono/train', transform= train_transform) # sono 
-        train_dataset = CustomDataset(root_dir = '/home/eiden/eiden/DB/oci-gan/oci-gan_v1/train', transform= train_transform) #ours
+        # train_dataset = CustomDataset(root_dir = '/mnt/HDD/octc/data_bin_origin/train', transform= train_transform) #origin
+        train_dataset = CustomDataset(root_dir = '/mnt/HDD/octc/data_bin_sono/train', transform= train_transform) # sono 
+        # train_dataset = CustomDataset(root_dir = '/mnt/HDD/oci-gan/oci-gan_v1_bin/train', transform= train_transform) #ours
         # Fix 
-        valid_dataset = CustomDataset(root_dir = '/home/eiden/eiden/DB/octc/data_bin_origin/valid', transform= valid_transform)
+        # valid_dataset = CustomDataset(root_dir = '/mnt/HDD/octc/data_bin_origin/valid', transform= valid_transform) #origin
+        valid_dataset = CustomDataset(root_dir = '/mnt/HDD/octc/data_bin_sono/valid', transform= valid_transform) # sono 
+        # valid_dataset = CustomDataset(root_dir = '/mnt/HDD/oci-gan/oci-gan_v1_bin/valid', transform= valid_transform)
 
         self.train_loader = DataLoader(
                                     dataset = train_dataset,
@@ -112,8 +114,8 @@ class Train(nn.Module):
         self.arg_path = f"{self.save_path}/{name}.json" #인자 save할 경로 설정
         save_args(self.arg_path)
         ######################################### Saving File #########################################
-        self.model = binary_models.pretrained_convnext_binary()
-        # self.model = binary_models.pretrained_swin_binary()
+        # self.model = binary_models.pretrained_convnext_binary()
+        self.model = binary_models.pretrained_swin_binary()
         
         ############################## Model Initialization & GPU Setting ##############################
         if args.pretrain == 'yes': #pretrained model 사용여부
@@ -133,7 +135,7 @@ class Train(nn.Module):
                 self.epoch = 0
             self.lr = checkpoint['learning_rate']
             self.loss = checkpoint['loss'].to(self.device)
-            self.optimizer = optim.Adam(self.model.parameters(), lr = self.lr)
+            self.optimizer = optim.AdamW(self.model.parameters(), lr = self.lr)
             self.optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
             self.scheduler = optim.lr_scheduler.LambdaLR(optimizer = self.optimizer, lr_lambda=lambda epoch: 0.95 ** self.epochs)
             self.name = checkpoint['model']
@@ -155,7 +157,7 @@ class Train(nn.Module):
             ############################# Hyper Parameter Setting ################################
             self.loss = nn.BCEWithLogitsLoss().to(self.device)
             # self.loss = custom_loss.FocalLoss(alpha = 0.25, gamma = 2.0).to(self.device)
-            self.optimizer = optim.Adam(self.model.parameters(), lr = args.learning_rate)
+            self.optimizer = optim.AdamW(self.model.parameters(), lr = args.learning_rate)
             self.scheduler = optim.lr_scheduler.LambdaLR(optimizer = self.optimizer,
                                                         lr_lambda=lambda epoch: 0.95 ** epoch,
                                                         last_epoch = -1,
@@ -173,7 +175,7 @@ class Train(nn.Module):
             self.best_loss = float('inf')
         
             ############################# Hyper Parameter Setting ################################
-        self.early_stopping_epochs, self.early_stop_cnt = 30, 0
+        self.early_stopping_epochs, self.early_stop_cnt = 10, 0
             
         ############################### Metrics Setting########################################
         self.metrics = {
@@ -203,14 +205,15 @@ class Train(nn.Module):
                 self.optimizer.zero_grad()
                 inputs, labels = inputs.to(self.device), labels.float().to(self.device)
                 outputs = self.model(inputs)
-                
+                outputs = torch.sigmoid(outputs)  # 시그모이드 함수 적용
+
                 train_loss = self.loss(outputs, labels)
                 train_loss.backward()
                 self.optimizer.step()
                 
                 train_losses += train_loss.item()
                 # 예측 값을 이진 레이블로 변환
-                pred = (torch.sigmoid(outputs) > 0.5).float()
+                pred = (outputs > 0.5).float()  # 출력에 시그모이드 함수를 적용하므로 이진 레이블로 변환할 때도 사용합니다.
                 train_target.extend(labels.detach().cpu().numpy())
                 train_pred.extend(pred.detach().cpu().numpy())
 
@@ -239,12 +242,15 @@ class Train(nn.Module):
                 for _ , (inputs, labels) in enumerate(self.valid_loader):
                     inputs, labels = inputs.to(self.device), labels.float().to(self.device)
                     outputs = self.model(inputs)
+
+                    # 여기서 출력에 시그모이드 함수를 적용합니다.
+                    outputs = torch.sigmoid(outputs)  # 시그모이드 함수 적용
                     
                     valid_loss = self.loss(outputs, labels)
                     valid_losses += valid_loss.item()
 
                     # 예측 값을 이진 레이블로 변환
-                    pred = (torch.sigmoid(outputs) > 0.5).float()
+                    pred = (outputs > 0.5).float()  # 출력에 시그모이드 함수를 적용하므로 이진 레이블로 변환할 때도 사용합니다.
                     valid_target.extend(labels.detach().cpu().numpy())
                     valid_pred.extend(pred.detach().cpu().numpy())
                     
@@ -267,55 +273,32 @@ class Train(nn.Module):
                     "valid_RECALL" : self.metrics['valid_recall'][-1],
                 }, step = epoch)
             
-            # Early Sooping
-            if self.metrics['valid_loss'][-1] > self.best_loss:
-                self.early_stop_cnt += 1
-            else:
-                self.best_loss = self.metrics['valid_loss'][-1]
-                self.early_stop_cnt = 0
+            # # Early Sooping
+            # if self.metrics['valid_loss'][-1] > self.best_loss:
+            #     self.early_stop_cnt += 1
+            #     # 조기 종료 조건 확인
+            #     if self.early_stop_cnt >= self.early_stopping_epochs:
+            #         print(f"Early Stops!!! : {epoch}/{self.epochs}")
+            #         torch.save({
+            #             "model" : f"{self.model_name}" + f"{self.version}_{epoch}",
+            #             "epoch" : epoch,
+            #             "epochs" : self.epochs,
+            #             "model_state_dict" : self.model.state_dict(),
+            #             "optimizer_state_dict" : self.optimizer.state_dict(),
+            #             "learning_rate" : lr,
+            #             "loss" : self.loss,
+            #             "best_loss" : self.best_loss,
+            #             "metric" : self.metrics,
+            #             "description" : f"Training status : {epoch}/{self.epochs}"
+            #         },
+            #         f"{self.save_path}/{self.name}_{epoch}_e.pt")
+            #         print(f"SAVE MODEL PATH : {self.model_save_path}")
+            #         break
+            # else:
+            #     self.best_loss = self.metrics['valid_loss'][-1]
+            #     self.early_stop_cnt = 0
             
-            # #valid loss가 valid_loss 이전까지 Loss보다 작으면 저장하게 만듬.
-            if len(self.metrics['valid_loss']) > 1 : #valid loss 리스트가 값이 잇을때
-                min_valid_loss = np.min(np.array(self.metrics['valid_loss'][:-1]))
-                if self.metrics['valid_loss'][-1] < min_valid_loss:
-                    torch.save({
-                        "model" : f"{self.model_name}" + f"{self.version}_{epoch}",
-                        "epoch" : epoch,
-                        "epochs" : self.epochs,
-                        "model_state_dict" : self.model.state_dict(),
-                        "optimizer_state_dict" : self.optimizer.state_dict(),
-                        "learning_rate" : lr,
-                        "loss" : self.loss,
-                        "best_loss" : self.best_loss,
-                        "metric" : self.metrics,
-                        "description" : f"Training status : {epoch}/{self.epochs}"
-                    },
-                    f"{self.save_path}/{self.name}_{epoch}_e.pt")
-                    
-                    print(f"SAVE MODEL PATH : {self.model_save_path}")
-                
-                
-            # 조기 종료 조건 확인
-            if self.early_stop_cnt >= self.early_stopping_epochs:
-                print(f"Early Stops!!! : {epoch}/{self.epochs}")
-                torch.save({
-                    "model" : f"{self.model_name}" + f"{self.version}_{epoch}",
-                    "epoch" : epoch,
-                    "epochs" : self.epochs,
-                    "model_state_dict" : self.model.state_dict(),
-                    "optimizer_state_dict" : self.optimizer.state_dict(),
-                    "learning_rate" : lr,
-                    "loss" : self.loss,
-                    "best_loss" : self.best_loss,
-                    "metric" : self.metrics,
-                    "description" : f"Training status : {epoch}/{self.epochs}"
-                },
-                f"{self.save_path}/{self.name}_{epoch}_e.pt")
-                
-                print(f"SAVE MODEL PATH : {self.model_save_path}")
-                # break
-            
-            elif epoch % 10 == 0 or epoch +1 == self.epochs:
+            if epoch % 10 == 0 or epoch +1 == self.epochs:
                 torch.save({
                     "model" : f"{self.model_name}" + f"{self.version}_{epoch}",
                     "epoch" : epoch,

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from train import Train 
+from train_sono import Train 
 from utils.arg import get_args 
 
 

@@ -2285,3 +2285,123 @@
 2024-04-04 18:32:20,945 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
 2024-04-04 18:32:21,946 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
 2024-04-04 18:32:22,713 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:32:23,946 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:25,224 DEBUG   SenderThread:523440 [sender.py:send():378] send: stats
+2024-04-04 18:32:25,946 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:27,208 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-04 18:32:27,209 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-04 18:32:27,209 DEBUG   SenderThread:523440 [sender.py:send_request():405] send_request: stop_status
+2024-04-04 18:32:27,947 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:28,161 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:32:29,947 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:31,948 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:33,520 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:32:33,948 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:35,948 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:37,949 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:39,159 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:32:39,949 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:41,950 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:42,208 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-04 18:32:42,209 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-04 18:32:42,209 DEBUG   SenderThread:523440 [sender.py:send_request():405] send_request: stop_status
+2024-04-04 18:32:43,950 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:44,518 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:32:45,950 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:48,951 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:50,089 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:32:50,925 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-04 18:32:50,925 DEBUG   SenderThread:523440 [sender.py:send():378] send: history
+2024-04-04 18:32:50,925 DEBUG   SenderThread:523440 [sender.py:send_request():405] send_request: summary_record
+2024-04-04 18:32:50,926 INFO    SenderThread:523440 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-04 18:32:50,952 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/wandb-summary.json
+2024-04-04 18:32:50,952 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:52,952 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:53,755 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-04 18:32:54,953 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:55,225 DEBUG   SenderThread:523440 [sender.py:send():378] send: stats
+2024-04-04 18:32:55,225 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:32:56,953 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:32:57,208 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-04 18:32:57,209 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-04 18:32:57,209 DEBUG   SenderThread:523440 [sender.py:send_request():405] send_request: stop_status
+2024-04-04 18:32:58,953 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:00,954 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:01,145 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:33:02,954 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:04,955 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:06,382 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:33:06,955 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:08,956 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:10,956 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:11,751 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:33:12,209 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-04 18:33:12,209 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-04 18:33:12,209 DEBUG   SenderThread:523440 [sender.py:send_request():405] send_request: stop_status
+2024-04-04 18:33:12,957 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:14,957 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:16,958 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:17,171 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:33:18,958 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:20,958 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:22,438 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:33:22,959 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:24,959 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:25,225 DEBUG   SenderThread:523440 [sender.py:send():378] send: stats
+2024-04-04 18:33:26,512 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-04 18:33:26,513 DEBUG   SenderThread:523440 [sender.py:send():378] send: history
+2024-04-04 18:33:26,513 DEBUG   SenderThread:523440 [sender.py:send_request():405] send_request: summary_record
+2024-04-04 18:33:26,513 INFO    SenderThread:523440 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-04 18:33:26,960 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/wandb-summary.json
+2024-04-04 18:33:26,960 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:27,209 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-04 18:33:27,209 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-04 18:33:27,209 DEBUG   SenderThread:523440 [sender.py:send_request():405] send_request: stop_status
+2024-04-04 18:33:27,529 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:33:28,960 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:29,236 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-04 18:33:30,961 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:32,961 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:33,045 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:33:34,962 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:36,962 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:38,596 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:33:38,963 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:40,963 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:42,209 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-04 18:33:42,209 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-04 18:33:42,209 DEBUG   SenderThread:523440 [sender.py:send_request():405] send_request: stop_status
+2024-04-04 18:33:42,963 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:44,308 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:33:44,964 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:46,964 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:48,965 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:49,769 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:33:50,965 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:52,966 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:54,966 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:55,225 DEBUG   SenderThread:523440 [sender.py:send():378] send: stats
+2024-04-04 18:33:55,226 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:33:56,966 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:33:57,209 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-04 18:33:57,209 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-04 18:33:57,209 DEBUG   SenderThread:523440 [sender.py:send_request():405] send_request: stop_status
+2024-04-04 18:33:58,967 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:34:00,959 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:34:00,967 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:34:02,857 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-04 18:34:02,857 DEBUG   SenderThread:523440 [sender.py:send():378] send: history
+2024-04-04 18:34:02,857 DEBUG   SenderThread:523440 [sender.py:send_request():405] send_request: summary_record
+2024-04-04 18:34:02,857 INFO    SenderThread:523440 [sender.py:_save_file():1365] saving file wandb-summary.json with policy end
+2024-04-04 18:34:02,968 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/wandb-summary.json
+2024-04-04 18:34:02,968 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:34:04,968 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:34:05,512 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-04 18:34:06,193 DEBUG   HandlerThread:523440 [handler.py:handle_request():146] handle_request: status_report
+2024-04-04 18:34:06,969 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:34:08,969 INFO    Thread-12 :523440 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eiden/eiden/octc-classification/source/binary/train/wandb/run-20240404_175753-mmacvpso/files/output.log
+2024-04-04 18:34:09,456 INFO    MainThread:523440 [internal.py:handle_exit():76] Internal process exited
+2024-04-04 18:34:09,549 INFO    memory    :523440 [interfaces.py:monitor():140] Process proc.memory.rssMB has exited.
+2024-04-04 18:34:09,550 DEBUG   SystemMonitor:523440 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-04-04 18:34:09,550 DEBUG   SystemMonitor:523440 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-04-04 18:34:09,551 DEBUG   SenderThread:523440 [sender.py:send():378] send: stats

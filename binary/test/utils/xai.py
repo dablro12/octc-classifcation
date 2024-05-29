@@ -3,21 +3,31 @@ import numpy as np
 import cv2
 from torchvision import transforms
 from PIL import Image
+import os
 
-
-def apply_gradcam(model, image_path, target_layer, device):
+# Grad-CAM 함수 정의
+def apply_gradcam(model, image_path, target_layer, device, type = 'Ours'):
     # 원본 이미지를 엽니다.
     original_img = Image.open(image_path).convert('RGB')
     
     # 원본 이미지의 크기를 얻습니다.
     original_size = original_img.size
 
+
     # 이미지 전처리 파이프라인을 설정합니다.
-    transform = transforms.Compose([
-        transforms.Resize((224, 224)),
-        transforms.Grayscale(num_output_channels=3),
-        transforms.ToTensor(),
-    ])
+    if type == 'Ours':
+        transform = transforms.Compose([
+            transforms.Resize((224, 224)),
+            transforms.Grayscale(num_output_channels=3),
+            transforms.ToTensor(),
+        ])
+    else:
+        transform = transforms.Compose([
+            transforms.Resize((512, 512)),
+            transforms.Resize((224, 224)),
+            transforms.Grayscale(num_output_channels=3),
+            transforms.ToTensor(),
+        ])
 
     # 전처리된 이미지 텐서를 생성합니다.
     img_tensor = transform(original_img).unsqueeze(0).to(device)

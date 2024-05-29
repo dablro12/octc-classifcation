@@ -41,7 +41,7 @@ class CustomDataset(Dataset):
         if self.transform:
             image = self.transform(image)
         
-        return image, label
+        return image, label, image_path
     
     def getlabels(self):
         return self.labels
